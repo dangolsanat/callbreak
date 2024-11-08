@@ -1,0 +1,21 @@
+.played-cards {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .played-card {
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  .played-card img {
+    width: 60px;
+    height: auto;
+  }
+  
+  .played-card.highlight {
+    border: 2px solid gold;
+    border-radius: 8px;
+  }
+  
