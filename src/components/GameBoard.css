@@ -1,162 +1,29 @@
-/* General Styling */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0a3d62;
-  color: white;
-}
-
+/* GameBoard.css */
 .game-board {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
-}
-
-/* Scores Section */
-.scores {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.score {
-  font-size: 16px;
-  background-color: #1e272e;
-  padding: 10px;
-  border-radius: 5px;
   text-align: center;
-  transition: transform 0.2s;
 }
 
-.score.player-0 {
-  font-weight: bold;
-  color: #00d8d6;
+.phase-indicator {
+  margin: 20px 0;
 }
 
-.score:hover {
-  transform: scale(1.05);
+.bids {
+  margin: 20px 0;
 }
 
-/* Table Layout */
 .table {
-  width: 60%;
-  height: 40%;
-  margin: 20px auto;
-  border: 2px solid white;
-  border-radius: 10px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1e272e;
+  margin: 20px 0;
 }
 
-/* Played Cards */
-.played-cards {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+.error-message {
+  color: red;
+  font-weight: bold;
 }
 
-.played-card {
-  text-align: center;
-  margin: 10px;
-  transition: transform 0.3s;
+.current-player-indicator {
+  margin: 20px 0;
 }
 
-.played-card img {
-  width: 80px;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-
-.played-card.highlight img {
-  border: 2px solid #00d8d6;
-  transform: scale(1.2);
-}
-
-.played-card p {
-  margin-top: 5px;
-  color: #00d8d6;
-  font-size: 14px;
-}
-
-.empty-message {
-  font-size: 18px;
-  color: #cccccc;
-}
-
-/* Player Hand */
-.player-hand {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.player-hand img {
-  width: 60px;
-  height: auto;
-  margin: 5px;
-  cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.player-hand img:hover,
-.player-hand img:focus {
-  transform: scale(1.1);
-}
-
-.player-hand img.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* Bidding Section */
-.bidding {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.bidding input {
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  background-color: #1e272e;
-  color: white;
-}
-
-.bidding input:focus {
-  outline: 2px solid #00d8d6;
-}
-
-.bidding h3 {
-  margin-bottom: 10px;
-  color: #00d8d6;
-  font-size: 18px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .table {
-    width: 90%;
-    height: 50%;
-  }
-
-  .player-hand img {
-    width: 50px;
-  }
-
-  .score {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .played-card img {
-    width: 60px;
-  }
+.game-over {
+  margin: 20px 0;
 }

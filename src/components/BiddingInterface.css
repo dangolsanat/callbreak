@@ -1,0 +1,9 @@
+/* BiddingInterface.css */
+.bidding-interface {
+  margin: 20px 0;
+}
+
+.bid-options button {
+  margin: 5px;
+  padding: 10px;
+}

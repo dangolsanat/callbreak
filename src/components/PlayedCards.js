@@ -1,15 +1,19 @@
-import React from "react";
-import "./PlayedCards.css";
+// PlayedCards.js
+import React from 'react';
+import './PlayedCards.css';
 
 const PlayedCards = ({ playedCards }) => {
   return (
     <div className="played-cards">
-      {playedCards.map((played, index) => (
-        <div key={index} className="played-card">
-          <img src={played.card.image} alt={played.card.code} />
-          <p>Player {played.player + 1}</p>
-        </div>
-      ))}
+      <h3>Cards on the Table</h3>
+      <div className="cards">
+        {playedCards.map((play, index) => (
+          <div key={index} className="played-card">
+            <img src={play.card.image} alt={play.card.code} />
+            <div>Player {play.player + 1}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

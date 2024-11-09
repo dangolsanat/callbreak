@@ -1,17 +1,21 @@
-.card {
-    width: 50px;
-    height: auto;
-    margin: 5px;
-    transition: transform 0.2s ease;
-  }
-  
-  .card.clickable:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-  }
-  
-  .card.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
+/* PlayerHand.css */
+.player-hand {
+  margin: 20px 0;
+}
+
+.player-hand .cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.player-hand img {
+  margin: 5px;
+  width: 80px;
+  cursor: default;
+}
+
+.player-hand img.clickable {
+  cursor: pointer;
+  border: 2px solid blue;
+}
