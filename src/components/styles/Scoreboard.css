@@ -1,0 +1,30 @@
+/* Scoreboard.css */
+
+/* =====================================================
+   Scoreboard Styles
+===================================================== */
+/* Scoreboard Container */
+.scoreboard {
+  width: 100%;
+  margin: 1rem 0;
+  position: relative;
+  left: -10%;
+}
+
+.scoreboard h4 {
+  margin-bottom: 1rem;
+}
+
+.scoreboard div {
+  margin: 5px 0;
+  font-size: 0.7rem;
+}
+
+/* =====================================================
+   Responsive Design
+===================================================== */
+@media (max-width: 768px) {
+  .scoreboard div {
+    font-size: 16px;
+  }
+}

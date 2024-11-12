@@ -1,0 +1,92 @@
+/* PlayedCards.css */
+
+.played-cards {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.played-cards h3 {
+  position: relative;
+  top: 15%;
+  text-align: center;
+  width: 100%;
+}
+
+.playerId{
+  margin-top: 0.3rem;
+  font-size: 0.6rem;
+}
+
+.played-cards .cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.played-card {
+  width: var(--played-card-width); /* Default width if not set */
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  position: absolute;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: var(--shadow-player, 2px 2px 5px rgba(0, 0, 0, 0.5));
+}
+
+.played-card img {
+  width: 100%;
+  border-radius: var(--border-radius, 8px);
+}
+
+/* Positioning based on player index */
+.played-card.player-0 {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.played-card.player-1 {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.played-card.player-2 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.played-card.player-3 {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+/* Animation for the winning card */
+@keyframes moveToWinner {
+  to {
+    transform: translate(var(--winner-x), var(--winner-y));
+    opacity: 0;
+  }
+}
+
+.played-card.winning {
+  animation: moveToWinner 1s forwards;
+}
+
+@media (max-width: 768px) {
+  .played-cards {
+    width: 150px;
+    height: 200px;
+  }
+
+  .played-card {
+    width: 60px;
+  }
+}
+
+

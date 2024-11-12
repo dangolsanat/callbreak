@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* =====================================================
+   CSS Variables for Consistent Styling
+===================================================== */
+:root {
+  /* Colors */
+  --primary-color: #1e272e;
+  --secondary-color: #d2dae2;
+  --accent-color: #e84118;
+  --background-color: #1e272e;
+  --text-color: #ffffff;
+  --error-color: #ff4757;
+  --scored-background: #f5f6fa;
+
+  /* Spacing */
+  --padding-small: 8px;
+  --padding-medium: 10px;
+  --padding-large: 20px;
+  --margin-small: 5px;
+  --margin-medium: 1rem;
+  --margin-large: 20px;
+
+  /* Typography */
+  --font-size-base: 16px;
+  --font-size-large: 1.5rem;
+  --font-size-medium: 1.2rem;
+  --font-size-small: 14px;
+  --font-family: "Press Start 2P";
+
+  /* Border Radius */
+  --border-radius: 0.5rem;
+
+  /* Shadows */
+  --shadow-table: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-player: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Transition */
+  --transition-speed: 0.3s;
+
+  /* Card Widths */
+  --card-width: 90px;
+  --card-width-small: 50px;
+  --card-width-ai: 50px;
+  --played-card-width: 80px;
+
+  /* Animation Variables */
+  --winner-x: 100px; /* Adjust as needed */
+  --winner-y: 100px; /* Adjust as needed */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* =====================================================
+   Reset Some Default Styles
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--background-color);
+  font-family: 'Press Start 2P';
+  color: var(--text-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  background-color: #f0ad4e;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background-color var(--transition-speed);
+}
+
+button:hover {
+  background-color: #ec971f;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Press Start 2P';
+  margin: 6px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =====================================================
+   Logo Animation Styles
+===================================================== */
+
+/* Container for the intro animation */
+.introContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: var(--background-color);
+  z-index: 10;
 }
 
-.App-link {
-  color: #61dafb;
+/* Initial style for the logo */
+.callBreakLogo {
+  position: relative;
+  top: -10%;
+  left: -20%;
+  width: 20%; /* Increased for better visibility */
+  max-width: 10rem;
+  height: auto;
+  border-radius: 1rem;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  /* Removed general transition to prevent conflicts */
 }
 
-@keyframes App-logo-spin {
+/* Logo hover effects */
+.callBreakLogo:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(210, 218, 226, 0.8) 0px 0px 20px -5px;
+}
+
+.callBreakLogo:active {
+  transform: scale(0.99); /* Changed from 0.6 to 0.99 for a subtle effect */
+  box-shadow: rgba(210, 218, 226, 0) 0px 0px 30px -5px;
+}
+
+/* =====================================================
+   GameBoard Animation Styles
+===================================================== */
+
+/* GameBoard fade-in animation */
+.GameBoard {
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Define the keyframes for fadeIn animation */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(0);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   Responsive Design Enhancements
+===================================================== */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .callBreakLogo {
+    width: 30%; /* Increase width on smaller screens */
+    top: -5%; /* Adjusted for better positioning */
+    left: -15%; /* Adjusted for better positioning */
+  }
+
+  .helperDiv {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .callBreakLogo {
+    width: 40%; /* Further increase width on very small screens */
+    top: 0%; /* Adjusted for better positioning */
+    left: -10%; /* Adjusted for better positioning */
+  }
+
+  .helperDiv {
+    width: 20rem;
+    height: 20rem;
   }
 }

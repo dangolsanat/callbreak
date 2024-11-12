@@ -1,0 +1,84 @@
+/* CardSelectionPhase.css */
+.card-selection-phase {
+  text-align: center;
+  padding: 20px;
+}
+
+.current-player {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.card-container {
+  position: relative;
+  width: 80px;
+  height: 120px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card-container.clickable:hover {
+  transform: scale(1.05);
+}
+
+.card-container.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  backface-visibility: hidden;
+}
+
+.selected-cards {
+  margin-top: 20px;
+}
+
+.selected-cards-grid {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.selected-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selected-card.empty {
+  width: 80px;
+  height: 120px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected-card img.card-face {
+  width: 80px;
+  height: 120px;
+  border-radius: 8px;
+}

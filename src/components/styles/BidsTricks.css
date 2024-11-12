@@ -1,0 +1,42 @@
+/* BidsTricks.css */
+
+/* =====================================================
+   Bids and Tricks Won Styles
+===================================================== */
+/* Container */
+.bids-tricks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align text to the right */
+    width: 100%;
+    position: relative;
+    left: 10%;
+    top: 20%;
+  }
+  
+  /* Heading */
+  .bids-tricks h4 {
+    margin-bottom: 10px;
+    text-align: right;
+  }
+  
+  /* Player Bids and Tricks */
+  .player-bid-tricks {
+    margin-bottom: 5px;
+    text-align: right;
+    font-size: 0.7rem;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .bids-tricks {
+      align-items: center; /* Center align on smaller screens */
+      text-align: center;
+    }
+  
+    .bids-tricks h4,
+    .player-bid-tricks {
+      text-align: center;
+    }
+  }
+  

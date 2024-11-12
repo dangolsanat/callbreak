@@ -1,0 +1,114 @@
+/* BiddingInterface.css */
+
+
+
+/* Bidding Interface Styles */
+.bidding-interface {
+  font-size: 16px;
+  background-color: #7093ae;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 1; /* Initially visible */
+  transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+  position:fixed;
+  top: 62%;
+  z-index: 20;
+}
+
+.bidding-interface::before {
+  content: '';
+  position: absolute;
+  top: 0.4rem; /* Offset from the top */
+  left: 0.4rem; /* Offset from the left */
+  right: 0.4rem; /* Offset from the right */
+  bottom: 0.4rem; /* Offset from the bottom */
+  border: 0.1rem solid #ffffff; /* Inner border */
+  border-radius: 10px;
+  pointer-events: none; /* Prevent interaction with the pseudo-element */
+}
+
+/* Fade-out Effect */
+.bidding-interface.fade-out {
+  opacity: 0; /* Fade out */
+  pointer-events: none; /* Disable interaction during fade-out */
+  animation: fadeOut 1s forwards;
+
+}
+
+/* Optional: Fade-in Effect (if needed for entry animation) */
+.bidding-interface.fade-in {
+  opacity: 1;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+/* Additional Styles */
+.bid-topBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bid-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pixel-button {
+  font-family: 'Press Start 2P';
+  display: inline-block;
+  width: 64px;
+  height: 32px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  background-color: #ff5252;
+  border: 2px solid #d42a2a;
+  box-shadow:
+    2px 2px 0 #1b1b1b,
+    -2px -2px 0 #1b1b1b,
+    inset 1px 1px 0 #ff7070,
+    inset -1px -1px 0 #b71c1c;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+.pixel-button:hover {
+  background-color: #ff7070;
+  box-shadow:
+    3px 3px 0 #1b1b1b,
+    -3px -3px 0 #1b1b1b,
+    inset 1px 1px 0 #ff8a8a,
+    inset -1px -1px 0 #8e0e0e;
+}
+
+.pixel-button:active {
+  transform: translate(1px, 1px); /* Simulate "pressed" button */
+  box-shadow:
+    1px 1px 0 #1b1b1b,
+    -1px -1px 0 #1b1b1b,
+    inset 0px 0px 0 #ff5252,
+    inset 0px 0px 0 #d42a2a;
+}

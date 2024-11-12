@@ -1,0 +1,73 @@
+/* PlayerHand.css */
+
+/* Root Variables */
+:root {
+  --card-width: 100px;          /* Width of each card */
+  --card-width-small: 60px;     /* Width for smaller screens */
+  --card-overlap: 50px;         /* 50% overlap of 100px width */
+  --border-radius: 8px;         /* Rounded corners */
+  --shadow-player: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  --transition-speed: 0.3s;     /* Transition duration */
+  --accent-color: #ff5722;      /* Color for focus outline */
+}
+
+/* Player Hand Container */
+.player-hand {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Player's Cards Container */
+.player-hand .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Establishes a positioning context */
+  padding: 25px 0;    /* Adds vertical padding */
+}
+
+/* Individual Player Card */
+.player-hand .card {
+  width: var(--card-width);
+  height: auto;
+  margin-left: calc(-0.5 * var(--card-width)); /* Negative margin for 50% overlap */
+  transition: transform 0.2s ease, box-shadow var(--transition-speed);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-player);
+  position: relative;
+  z-index: 1; /* Base z-index */
+}
+
+/* First Card Adjustment */
+/* .player-hand .card:first-child {
+  margin-left: 0; 
+} */
+
+/* Hover Effect */
+.player-hand .card:hover,
+.player-hand .card:focus {
+  transform: scale(1.1) translateY(-1rem); /* Enlarges the card on hover/focus */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  z-index: 100; /* Temporarily brings hovered/focused card above others */
+}
+
+/* Clickable Cursor */
+.player-hand .card.clickable {
+  cursor: pointer;
+}
+
+/* Focus Styles for Accessibility */
+.player-hand .card:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+/* Responsive Adjustments for Player Hand */
+@media (max-width: 768px) {
+  .player-hand .card {
+    width: var(--card-width-small);
+    margin-left: calc(-0.5 * var(--card-width-small)); /* Maintain 50% overlap on smaller screens */
+  }
+}

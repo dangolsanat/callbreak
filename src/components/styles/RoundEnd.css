@@ -1,0 +1,29 @@
+/* RoundEnd.css */
+
+.round-end {
+  position: absolute;
+  top: 33%;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.round-end h2 {
+  margin-bottom: 1rem;
+}
+
+.round-end h3 {
+  margin-bottom: 1rem;
+}
+.round-end div {
+  margin-bottom: 0.3rem;
+}
+
+.round-end button {
+  margin-top: 1rem;
+}
+
+.b2{
+  width: auto;
+  height: auto;
+  font-size: auto;
+}

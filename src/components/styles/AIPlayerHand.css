@@ -1,0 +1,50 @@
+/* AIPlayerHand.css */
+
+/* =====================================================
+   AI Player Hand Styles
+===================================================== */
+/* AI Player Hand Container */
+.ai-player-hand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ 
+/* AI Player's Cards Container */
+.ai-player-hand .cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* For overlapping effect */
+  width: 100%;
+}
+
+/* AI Player Card Back */
+.ai-player-hand .card-back {
+  width: var(--card-width-ai);
+  margin: 0 -20px; /* Negative margin for overlap */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-player);
+  cursor:not-allowed;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  position: relative;
+  z-index: 1; /* Base z-index */
+}
+
+
+/* Responsive Adjustments for AI Player Hand */
+@media (max-width: 768px) {
+  .ai-player-hand .card-back {
+    width: var(--card-width-small);
+    margin: 0 -15px; /* Adjust overlap for smaller screens */
+  }
+  .ai-player-hand .cards-container{
+    display:none;
+  }
+}
+
+ 
+
+ 
+ 

@@ -1,0 +1,224 @@
+/* GameBoard.css */
+
+/* =====================================================
+   Game Board Styles
+===================================================== */
+/* Game Board Container */
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 98vh;
+  padding: var(--padding-large);
+  background-color: var(--background-color);
+  position: relative;
+  color: var(--text-color);
+  z-index: 1;
+}
+
+#dealButton{
+position: absolute;
+}
+/* Top Bar: Scoreboard and Bids & Tricks Won */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1000px; /* Adjust as needed */
+  margin: var(--margin-large) 0;
+  padding: var(--padding-medium);
+}
+
+/* Phase Indicator */
+.phase-indicator {
+  text-align: center;
+  margin: var(--margin-large) 0;
+  width: 100%;
+  max-width: 800px;
+  position: absolute;
+}
+
+/* Error Message */
+.error-message {
+  color: var(--error-color);
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Current Player Indicator */
+.current-player-indicator {
+  font-size: var(--font-size-medium);
+}
+
+/* AI Player Positions Container */
+.ai-player-positions {
+  position: relative; /* Establishes a new positioning context */
+  width: 100%;
+  max-width: 800px;
+  height: 400px; /* Adjust as needed */
+  margin: var(--margin-large) 0;
+}
+
+/* AI Player Container */
+.ai-player {
+  position: fixed; /* Positioned relative to .ai-player-positions */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Player 2 - Left */
+.ai-player.left {
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+}
+
+/* Player 3 - Top */
+.ai-player.top {
+  top: 15%;
+  left: 48%;
+  transform: translateX(-50%);
+}
+
+/* Player 4 - Right */
+.ai-player.right {
+  top: 50%;
+  right: 15%;
+  transform: translateY(-50%);
+}
+
+/* Table Styling */
+.table {
+  width: 34rem;
+  height: 23rem;
+  margin: 0 auto;
+  border: 1px solid var(--text-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-table);
+  transition: all var(--transition-speed) ease-in-out;
+  position:absolute;
+  top: 48%;
+  left: 49.5%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.insideOne{
+  width: 98%;
+  height: 96%;
+  border: 1px solid var(--text-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgb(119, 167, 163);
+}
+.insideTwo{
+  width: 98%;
+  height: 96%;
+  border:  1px dashed var(--text-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgb(54, 96, 92);
+}
+
+
+/* Game Over Message */
+.game-over {
+  font-size: var(--font-size-large);
+  color: var(--accent-color);
+  text-align: center;
+  margin: var(--margin-large) 0;
+  position: absolute;
+  top: 33%;
+  text-align: center;
+}
+
+/* =====================================================
+   Responsive Design
+===================================================== */
+@media (max-width: 1024px) {
+  .top-bar {
+    max-width: 900px;
+  }
+
+}
+
+@media(max-width: 1500px){
+  .ai-player.right {
+    right: -25%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .ai-player.left {
+    left: -25%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media(max-width: 1250px){
+  .ai-player.right {
+    right: -20%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .ai-player.left {
+    left: -20%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Top Bar Adjustments */
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+  }
+
+  /* AI Player Positions Container Adjustments */
+  .ai-player-positions {
+    max-width: 600px;
+    height: 300px;
+  }
+
+  /* AI Player Positioning Adjustments */
+  .ai-player.left,
+  .ai-player.right {
+    left: 5%;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .ai-player.top {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Table Adjustments */
+  .table {
+    width: 60%;
+    height: auto;
+    padding: var(--padding-small);
+  }
+
+  /* Player Area Adjustments */
+  .player-area {
+    width: 80%;
+  }
+}
+
+
