@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# **Call Break Game** 🎮🃏
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Welcome to Call Break**, a thrilling trick-taking card game brought to life using modern web technologies. This game combines the classic charm of Call Break with a sleek, pixel-art aesthetic and seamless gameplay, now available for anyone to play directly in their browser!
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌐 **Play Now**
 
-### `npm start`
+👉 **No need to download or install!**  
+Play the game directly at:  
+[**Call Break - Play Online**](https://dangolsanat.github.io/callbreak)  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📖 **About the Game**
 
-### `npm test`
+Call Break is a popular trick-based card game played extensively in South Asia, especially Nepal. The game is strategic, competitive, and endlessly replayable, making it a favorite among card game enthusiasts.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This digital version stays true to the traditional rules while adding a modern touch. Whether you're a seasoned Call Break player or a newcomer, this game offers something for everyone.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 **Features**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🎴 **Classic Gameplay**
+- Authentic Call Break rules and mechanics.
+- Spades as the trump suit.
+- Full 52-card deck with proper shuffling and dealing.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🤖 **Single-Player Mode**
+- Intelligent AI opponents that adapt to your skill level.
 
-### `npm run eject`
+### 🎨 **Pixel Art Aesthetic**
+- Retro pixel-art design for a nostalgic gaming experience.
+- Custom pixel-art graphics for the card suits and UI.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🌑 **Dark Mode Support**
+- Switch effortlessly between light and dark themes to match your style.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 📊 **Detailed Stats**
+- Track your scores and tricks won after each round.
+- View your historical game data for progress tracking.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 🌐 **Play Anywhere**
+- Fully responsive design, playable on desktop, tablet, and mobile devices.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🎯 **How to Play**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Objective:** Predict the number of tricks you will win and achieve or exceed your bid to score points.
+2. **Setup:** 
+   - 52 cards are shuffled and dealt equally among 4 players.
+   - Players take turns to bid the number of tricks they expect to win.
+3. **Gameplay:** 
+   - Players must follow the suit of the first card played in a round.
+   - Spades are the trump suit, which can overpower other suits.
+   - The player with the highest card in the lead suit (or trump suit) wins the trick.
+4. **Scoring:** 
+   - Win your bid to score 10 points per trick. Fail to win your bid, and you lose points!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🛠️ **Built With**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **React**: For building the interactive user interface.
+- **Framer Motion**: Smooth and engaging animations.
+- **CSS (Pixel Art Design)**: A unique retro aesthetic with custom pixel art elements.
+- **GitHub Pages**: Deployment for instant online play.
+- **Axios**: (Optional) For any API interactions or data handling.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🌟 **Getting Started for Developers**
 
-### Making a Progressive Web App
+If you'd like to explore or modify the game, you can clone the repository and run it locally.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Prerequisites
+Ensure you have the following installed:
+- **Node.js**
+- **npm (Node Package Manager)**
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Steps to Run Locally
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dangolsanat/callbreak.git
+   cd callbreak
