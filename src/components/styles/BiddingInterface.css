@@ -11,9 +11,9 @@
   text-align: center;
   opacity: 1; /* Initially visible */
   transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
-  position:fixed;
-  top: 62%;
+  position:relative;
   z-index: 20;
+  top:-88%;
 }
 
 .bidding-interface::before {
@@ -78,7 +78,7 @@
   font-family: 'Press Start 2P';
   display: inline-block;
   width: 64px;
-  height: 32px;
+  height: 40px;
   font-size: 14px;
   text-align: center;
   color: #fff;
@@ -111,4 +111,13 @@
     -1px -1px 0 #1b1b1b,
     inset 0px 0px 0 #ff5252,
     inset 0px 0px 0 #d42a2a;
+}
+
+@media (max-width: 768px) {
+  .bidding-interface{
+    top: 100%;
+    scale: 65%;
+    left: -12%;
+    width: 120%;
+  scale:70%  }
 }

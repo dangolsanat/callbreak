@@ -27,3 +27,10 @@
   height: auto;
   font-size: auto;
 }
+
+@media (max-width: 768px) {
+  .round-end{
+    scale: 80%;
+
+  }
+}

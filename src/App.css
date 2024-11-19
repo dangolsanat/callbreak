@@ -40,7 +40,7 @@
 
   /* Card Widths */
   --card-width: 90px;
-  --card-width-small: 50px;
+  --card-width-small: 55px;
   --card-width-ai: 50px;
   --played-card-width: 80px;
 
@@ -153,6 +153,15 @@ p {
 /* GameBoard fade-in animation */
 .GameBoard {
   animation: fadeIn 1.5s ease-in-out forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 98vh;
+  padding: var(--padding-large);
+  background-color: var(--background-color);
+  position: relative;
+  color: var(--text-color);
+  z-index: 1;
 }
 
 /* Define the keyframes for fadeIn animation */

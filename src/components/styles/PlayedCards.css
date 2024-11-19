@@ -87,6 +87,10 @@
   .played-card {
     width: 60px;
   }
+  .playerId{
+    font-size: 0.35rem;
+    text-align: center;
+  }
 }
 
 

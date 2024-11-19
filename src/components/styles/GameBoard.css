@@ -4,21 +4,25 @@
    Game Board Styles
 ===================================================== */
 /* Game Board Container */
-.game-board {
+/* .game-board {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 98vh;
+  height: 90vh;
   padding: var(--padding-large);
   background-color: var(--background-color);
   position: relative;
   color: var(--text-color);
   z-index: 1;
+} */
+
+
+.player-area{
+  top: 75%;
+  position: absolute;
+  z-index: -2;
 }
 
-#dealButton{
-position: absolute;
-}
 /* Top Bar: Scoreboard and Bids & Tricks Won */
 .top-bar {
   display: flex;
@@ -43,12 +47,13 @@ position: absolute;
 .error-message {
   color: var(--error-color);
   font-weight: bold;
-  margin: 10px 0;
 }
 
 /* Current Player Indicator */
 .current-player-indicator {
   font-size: var(--font-size-medium);
+  position: relative;
+  top: -1%;
 }
 
 /* AI Player Positions Container */
@@ -129,6 +134,35 @@ position: absolute;
   align-items: center;
   position: absolute;
   background-color: rgb(54, 96, 92);
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.insideThree {
+  width: 98%;
+  height: 96%;
+  border: 1px dashed var(--text-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgb(27, 49, 47);
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: inset 0.1rem 0.1rem 0rem rgb(0, 0, 0); /* Start with no shadow */
+  animation: boxShadowExpand 1s ease-in forwards; /* Animate box-shadow on load */
+}
+
+@keyframes boxShadowExpand {
+  to {
+    box-shadow: inset 0.1rem 0.1rem 5rem rgb(0, 0, 0); /* Final shadow value */
+  }
+}
+
+
+.welcome{
+font-size: 1.6rem;
 }
 
 
@@ -155,12 +189,12 @@ position: absolute;
 
 @media(max-width: 1500px){
   .ai-player.right {
-    right: -25%;
+    right: 10%;
     top: 50%;
     transform: translateY(-50%);
   }
   .ai-player.left {
-    left: -25%;
+    left: 10%;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -168,12 +202,12 @@ position: absolute;
 
 @media(max-width: 1250px){
   .ai-player.right {
-    right: -20%;
+    right: 3%;
     top: 50%;
     transform: translateY(-50%);
   }
   .ai-player.left {
-    left: -20%;
+    left: 3%;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -185,6 +219,7 @@ position: absolute;
     flex-direction: column;
     align-items: center;
     max-width: 600px;
+    display: none;
   }
 
   /* AI Player Positions Container Adjustments */
@@ -196,29 +231,40 @@ position: absolute;
   /* AI Player Positioning Adjustments */
   .ai-player.left,
   .ai-player.right {
-    left: 5%;
-    right: 5%;
     top: 50%;
     transform: translateY(-50%);
   }
 
   .ai-player.top {
-    top: 5%;
+    top: 24%;
     left: 50%;
     transform: translateX(-50%);
   }
 
   /* Table Adjustments */
   .table {
-    width: 60%;
-    height: auto;
+    width: 70%;
     padding: var(--padding-small);
   }
 
   /* Player Area Adjustments */
   .player-area {
-    width: 80%;
+    width: 90%;
+    position: absolute;
+    top: 80%;
+  }
+  .current-player-indicator{
+    position:fixed;
+    top:70vh;
+  }
+  .error-message{
+    position:fixed;
+    top:74vh;
+    scale: 80%;
+    left: 4%;
+    width: 90%;
+    line-height: 22px;
+    text-align: center;
   }
 }
-
 

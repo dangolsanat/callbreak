@@ -10,6 +10,8 @@ import RoundEnd from './RoundEnd';
 import './styles/GameBoard.css';
 import AIPlayerHand from './AIPlayerHand';
 import BidsTricks from './BidsTricks';
+import { motion, AnimatePresence } from 'framer-motion';
+
  
 const GameBoard = () => {
   const {
@@ -46,14 +48,28 @@ const GameBoard = () => {
     useRef(null),
   ];
 
+
+  const gameBoardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1.2 } },
+  };
+
+  const biddingVariant ={
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 90, transition: { duration: 1.2 } },
+  }
+
   return (
     <div className="game-board">
 
       {!state.gameStarted ? (
         <div> 
-                    <div className="table">
+          <div className="table">
             <div className='insideOne'>
               <div className='insideTwo'>
+                <p className='welcome'>
+                  CALL BREAK
+                  </p>
               <button onClick={handleDealCards} id='dealButton' className='pixel-button b2'>Deal Cards</button>
               </div>
             </div></div>
@@ -61,7 +77,14 @@ const GameBoard = () => {
       ) : loading ? (
         <p>Loading...</p>
       ) : (
-        <>
+        <AnimatePresence>
+          <motion.div
+            className="GameBoard"
+            variants={gameBoardVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
           {/* Top Bar: Scoreboard and Bids & Tricks Won */}
           <div className="top-bar">
             {/* Scoreboard on the Top Left */}
@@ -124,7 +147,7 @@ const GameBoard = () => {
           {/* Table with Played Cards */}
           <div className="table">
             <div className='insideOne'>
-              <div className='insideTwo'>
+              <div className='insideThree'>
                 
               </div>
             </div>
@@ -163,13 +186,21 @@ const GameBoard = () => {
 
 
           {/* Bidding Interface */}
-          {gamePhase === GAME_PHASES.BIDDING && currentPlayer === 0 && (
-            <BiddingInterface
-              onBid={handleBidding}
-              suggestedBid={suggestedBid}
-            />
-          )}
+         <AnimatePresence> 
+          <motion.div
+            variants={biddingVariant}
+            initial="hidden"
+            animate="visible"
+            exit="hidden">
 
+            {gamePhase === GAME_PHASES.BIDDING && currentPlayer === 0 && (
+              <BiddingInterface
+                onBid={handleBidding}
+                suggestedBid={suggestedBid}
+              />
+            )}
+            </motion.div>
+          </AnimatePresence>  
           {/* Player's Hand */}
           <div ref={playerAreas[0]} className="player-area player-0">
             {(gamePhase === GAME_PHASES.BIDDING ||
@@ -188,8 +219,8 @@ const GameBoard = () => {
             )}
           </div>
 
-
-        </>
+          </motion.div>
+        </AnimatePresence>
       )}
 
 

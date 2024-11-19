@@ -7,7 +7,7 @@ import backCard from '../assets/cards/backCards/back_red_basic.png'
 const AIPlayerHand = ({ playerIndex, cards }) => {
   return (
     <div className={`ai-player-hand player-${playerIndex}`}>
-      <h3>AI Player {playerIndex+1}</h3>
+      <h3>P{playerIndex+1}</h3>
       <div className="cards-container">
         {cards.map((_, index) => (
           <img

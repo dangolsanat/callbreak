@@ -34,7 +34,7 @@
   width: var(--card-width);
   height: auto;
   margin-left: calc(-0.5 * var(--card-width)); /* Negative margin for 50% overlap */
-  transition: transform 0.2s ease, box-shadow var(--transition-speed);
+  transition: transform 0.2s ease, box-shadow var(--transition-speed), width 0.2s ease-in-out;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-player);
   position: relative;
@@ -69,5 +69,9 @@
   .player-hand .card {
     width: var(--card-width-small);
     margin-left: calc(-0.5 * var(--card-width-small)); /* Maintain 50% overlap on smaller screens */
-  }
+  };
+ .player-hand{
+  top: 80%;
+  position: relative;
+ }
 }
